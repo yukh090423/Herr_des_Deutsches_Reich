@@ -1,0 +1,29 @@
+{
+    "game_date": {
+        "year": 1933,
+        "quarter": 1
+    },
+    "player_country": "DEU",
+    "national_stats": {
+        "economy": 320,
+        "industry": 280,
+        "diplomacy": 280,
+        "military": 250,
+        "regime_stability": 380,
+        "social_stability": 360 
+    },
+    "finance": {
+        "budget": 100000,
+        "reserve": 20000,
+        "tax_rate": 15
+    },
+    "economy": {
+        "price_index": 100,
+        "wartime_economy": false
+    },
+    "national_focus": {
+        "selected": [],
+        "seclection_count": 2,
+        "selection_completed": false
+    }
+}

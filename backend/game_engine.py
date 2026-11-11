@@ -23,16 +23,6 @@ def next_turn(state):
         state["game_date"]["quarter"] = 1
         state["game_date"]["year"] += 1
 
-def stats_change(state,stat_name,deltapoint):
-    newpoint = state["national_stats"][stat_name] + deltapoint
-    if newpoint > 1000:
-        newpoint = 1000
-    elif newpoint < 0:
-        newpoint = 0
-    else:
-        pass
-    state["national_stats"][stat_name] = newpoint
-
 def save_game_state(state):
     file_path = BASE_DIR / "data" / "save_game.json"
 

@@ -27,13 +27,30 @@ def check_policy(state, policy):
     else:
         return False
 
-def run_policy(state, policy):
-    if check_policy(state, policy, policy) == True:
+def run_policy(state, policy_id, policy):
+    if check_policy(state, policy) == True:
         state["finance"]["budget"] -= cal_cost(state, policy)
         from state_utils import stats_change
         for stat_name, deltapoint in policy["effects"].items():
             stats_change(state, stat_name, deltapoint)
+        if policy["ongoing"] == True:
+            state["active_policies"][policy_id] = {
+                "remaining_turns": policy["duration"]
+            }
         return True
     else:
         return False
+
+from pathlib import Path
+import json
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+def load_policies():
+    file_path = BASE_DIR / "data" / "policies.json"
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        policies = json.load(file)
+
+    return policies
 

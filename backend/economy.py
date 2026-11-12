@@ -15,3 +15,10 @@ def cal_event_expenditure(ongoing_events, quarterly_events):
     for value in ongoing_events.values():
         expenditure += value["budget_effect"]
     return expenditure
+
+def cal_extra_expenditure(state, ongoing_events, quarterly_events):
+    expenditure = cal_ongoing_expenditure(state) + cal_event_expenditure(ongoing_events, quarterly_events)
+    return expenditure
+
+def cal_budget(state, ongoing_events, quarterly_events):
+    state["finance"]["budget"] += cal_tax(state) - cal_extra_expenditure(state, ongoing_events, quarterly_events)

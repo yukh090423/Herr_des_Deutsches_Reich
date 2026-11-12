@@ -22,5 +22,10 @@ eventclass = classify_events(events)
 quarterly_events = eventclass[0]
 ongoing_events = eventclass[1]
 
+def listmaking(quarterly_events, ongoing_events):
+    quarterly_event_list = []
+    ongoing_event_list = []
+    pass
+
 def final_event_probability(events):
     pass

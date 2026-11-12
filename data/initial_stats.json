@@ -25,5 +25,6 @@
         "selected": [],
         "seclection_count": 2,
         "selection_completed": false
-    }
+    },
+    "active_policies": {}
 }
